@@ -1,11 +1,10 @@
 package org.example;
 
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
+
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
 @EqualsAndHashCode
 @ToString
@@ -103,4 +102,27 @@ public class Address {
         return false;
     }
 
+    public int getStreetNo() {
+        return streetNo;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
 }

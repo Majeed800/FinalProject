@@ -1,11 +1,9 @@
 package org.example;
 
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
 @EqualsAndHashCode
 @ToString
@@ -44,4 +42,15 @@ public class Department {
         return true;
     }
 
+    public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public static int getNextId() {
+        return nextId;
+    }
 }
