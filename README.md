@@ -1,6 +1,6 @@
 Final Project
 Project Description
-This project consists of several classes representing components of a university system:
+This project consists of several classes representing components of a college or university system:
 
 Address: Represents an address with fields for street number, street name, city, province, postal code, and country.
 
