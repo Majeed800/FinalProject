@@ -19,6 +19,6 @@ Util: Contains utility methods, including a method to convert strings to title c
 Unit tests are provided for the following methods:
 
 Address: isPostalCodeValid
-Assignment: calcAssignmentAvg, isAssignmentsTotalWeightValid
+Assignment: calcAssignmentAvg
 Course: calcStudentAvg
 Util: toTitleCase
