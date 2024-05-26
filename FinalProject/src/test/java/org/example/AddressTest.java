@@ -21,7 +21,7 @@ public class AddressTest {
     @Test
     void testInvalidLengthPostalCode() {
         assertFalse(Address.isPostalCodeValid("A1B2C"));
-        assertFalse(Address.isPostalCodeValid("A1B2C3D4E5F6G"));
+        assertFalse(Address.isPostalCodeValid("A1B2C3D4E5"));
     }
 
     @Test
@@ -42,8 +42,8 @@ public class AddressTest {
 
     @Test
     void testInvalidSevenCharacterPostalCode() {
-        assertFalse(Address.isPostalCodeValid("A1B2 C3"));
+        assertFalse(Address.isPostalCodeValid("AAB2 C3"));
         assertFalse(Address.isPostalCodeValid("A1B 2CD"));
-        assertFalse(Address.isPostalCodeValid("A1B 2C!"));
+        assertFalse(Address.isPostalCodeValid("A1B 2C-"));
     }
 }

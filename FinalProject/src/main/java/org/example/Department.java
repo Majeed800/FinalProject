@@ -3,6 +3,7 @@ package org.example;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
 import lombok.ToString;
+import util.Util;
 
 @Setter
 @EqualsAndHashCode
@@ -16,7 +17,7 @@ public class Department {
     public Department(String departmentName) {
         if (validateDepartmentName(departmentName)) {
             this.departmentId = "D" + String.format("%02d", nextId++);
-            this.departmentName = departmentName;
+            this.departmentName = Util.toTitleCase(departmentName);
         } else {
             this.departmentId = null;
             this.departmentName = null;

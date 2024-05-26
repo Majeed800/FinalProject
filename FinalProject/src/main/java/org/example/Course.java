@@ -1,13 +1,14 @@
 package org.example;
 
 import lombok.EqualsAndHashCode;
-import lombok.Setter;
+
 import lombok.ToString;
+import util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-@Setter
+
 @EqualsAndHashCode
 @ToString
 
@@ -23,7 +24,7 @@ public class Course {
 
     public Course(String courseName, double credits, Department department) {
         this.courseId = generateNextId(department);
-        this.courseName = courseName;
+        this.courseName = Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
         this.assignments = new ArrayList<>();
@@ -66,7 +67,7 @@ public class Course {
                     weightSum += assignments.get(j).getWeight();
                 }
             }
-            averages[i] = (int) Math.round(sum / weightSum);
+            averages[i] = weightSum > 0 ? (int) Math.round(sum / weightSum) : 0;
         }
         return averages;
     }
@@ -142,5 +143,37 @@ public class Course {
 
     public static int getNextId() {
         return nextId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setCredits(double credits) {
+        this.credits = credits;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public void setAssignments(List<Assignment> assignments) {
+        this.assignments = assignments;
+    }
+
+    public void setRegisteredStudents(List<Student> registeredStudents) {
+        this.registeredStudents = registeredStudents;
+    }
+
+    public void setFinalScores(double[] finalScores) {
+        this.finalScores = finalScores;
+    }
+
+    public static void setNextId(int nextId) {
+        Course.nextId = nextId;
     }
 }

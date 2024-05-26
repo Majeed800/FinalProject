@@ -1,9 +1,11 @@
 package org.example;
 
+import lombok.EqualsAndHashCode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+@EqualsAndHashCode
 public class Assignment {
     private String assignmentId;
     private String assignmentName;
@@ -13,8 +15,12 @@ public class Assignment {
     private ArrayList<Integer> scores;
     private static int nextId = 1;
 
+    public Assignment(){
+
+    }
+
     public Assignment(String assignmentName, double weight, int maxScore) {
-        this.assignmentId = assignmentId;
+        this.assignmentId = "A" + String.format("%02d", nextId++);
         this.assignmentName = assignmentName;
         this.weight = weight;
         this.maxScore = maxScore;
@@ -81,5 +87,33 @@ public class Assignment {
 
     public static int getNextId() {
         return nextId;
+    }
+
+    public void setAssignmentId(String assignmentId) {
+        this.assignmentId = assignmentId;
+    }
+
+    public void setAssignmentName(String assignmentName) {
+        this.assignmentName = assignmentName;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setMaxScore(int maxScore) {
+        this.maxScore = maxScore;
+    }
+
+    public void setAssignmentAverage(double assignmentAverage) {
+        this.assignmentAverage = assignmentAverage;
+    }
+
+    public void setScores(ArrayList<Integer> scores) {
+        this.scores = scores;
+    }
+
+    public static void setNextId(int nextId) {
+        Assignment.nextId = nextId;
     }
 }

@@ -2,13 +2,11 @@ package util;
 
 public class Util {
     public static String toTitleCase(String strIn) {
-        String[] words = strIn.split(" ");
-        String titleCase = "";
-
-        for (String word : words) {
-            titleCase += word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase() + " ";
+        if (strIn.isEmpty()) {
+            return "";
         }
-
-        return titleCase;
+        String[] words = strIn.split(" ");
+        return words[0].substring(0, 1).toUpperCase() + words[0].substring(1).toLowerCase() + " " +
+                words[1].substring(0, 1).toUpperCase() + words[1].substring(1).toLowerCase();
     }
 }
